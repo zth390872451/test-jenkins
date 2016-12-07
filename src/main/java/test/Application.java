@@ -4,11 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.core.env.Environment;
-import org.springframework.core.env.SimpleCommandLinePropertySource;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * Created by Administrator on 2016/11/23.
@@ -20,7 +15,8 @@ public class Application {
     public static void main(String[] args) {
         System.out.println("Application.class args =  "+args);
         SpringApplication app = new SpringApplication(Application.class);
-        SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
+        app.run(args);
+       /* SimpleCommandLinePropertySource source = new SimpleCommandLinePropertySource(args);
 
         Environment env = app.run(args).getEnvironment();
         try {
@@ -32,7 +28,7 @@ public class Application {
                     env.getProperty("server.port"));
         } catch (UnknownHostException e) {
             e.printStackTrace();
-        }
+        }*/
         log.error("test success???");
         System.out.println("true = " + true);
     }
