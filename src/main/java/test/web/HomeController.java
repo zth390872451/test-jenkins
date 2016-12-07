@@ -13,8 +13,8 @@ public class HomeController {
         return "world";  
     }
     @ResponseBody
-    @RequestMapping("/a")
+    @RequestMapping("/hello2")
     public String test() {
-        return "test";
+        return "hello2";
     }
 }  
